@@ -1,0 +1,113 @@
+<html lang="en">
+<body> 
+    <input type="text"  style="width:400px; font-size: large; margin-left: 20%;  height: 50px; border-radius: 10px;" value="submit" placeholder= "Search for coursedetails" [(ngModel)]="searchtext" name="array id" class="form-control"> 
+   <button type="addcoursedetails" class="btn btn-primary" (click)="Courses()" (click)="toggle()" >GET COURSE DETAILS</button> 
+   <table *ngIf="Course" matSort>
+   
+<table class="border" border="1">
+   
+    
+<thead class="font" >
+    <tr>
+    <th>CourseId</th>
+    <th>CourseName</th>
+    <th>InstituteName</th>
+    <th>Address</th>
+    <th>CourseDuration</th>
+    <th>CourseURL</th>
+    <th>Edit & Delete</th>
+    <th>Update & Cancel</th>
+
+    
+    </tr>
+</thead>
+
+
+<tbody class="tbody" class="text-center" >
+    <tr *ngFor="let text of courses | filter : searchtext">
+        
+        <td>
+            <div class="hide" *ngIf="!hidden">
+             {{text.CourseId}}
+            </div>
+            <div *ngIf="hidden">
+                <input class="text" type="text" [(ngModel)]="text.CourseId">
+            </div>
+        </td>
+        
+
+
+        <td>
+            <div class="hide" *ngIf="!hidden">
+                {{text.CourseName}}
+            </div>
+            <div *ngIf="hidden">
+                <input class="text" type="text" [(ngModel)]="text.CourseName">
+            </div>
+        </td>
+
+
+        <td>
+            <div class="hide" *ngIf="!hidden">
+                {{text.InstituteName}}
+            </div>
+            <div *ngIf="hidden">
+                <input class="text" type="text" [(ngModel)]="text.InstituteName">
+            </div>
+        </td>
+
+
+        <td>
+            <div class="hide" *ngIf="!hidden">
+                {{text.Address}}
+            </div>
+            <div *ngIf="hidden">
+                <input class="text" type="text" [(ngModel)]="text.Address">
+            </div>
+        </td>
+
+        <td>
+            <div class="hide" *ngIf="!hidden">
+                {{text.CourseDuration}}
+            </div>
+            <div  *ngIf="hidden">
+                <input class="text" type="text" [(ngModel)]="text.CourseDuration">
+            </div>
+        </td>
+
+        <td>
+            <div class="hide" *ngIf="!hidden">
+                {{text.CourseURL}}
+            </div>
+            <div *ngIf="hidden">
+                <input class="text" type="text" [(ngModel)]="text.CourseURL">
+            </div>
+        </td>
+        <td>
+            <div class="hide" *ngIf="!hidden">
+            <button class="btn1" (click)="editDoc()">Edit</button>
+            <button class="btn2" (click)="deleteCourse(text._id)">Delete</button>
+
+        </div>
+        </td>
+   
+        <td>
+            <div *ngIf="hidden">
+            <button class="btn1" (click)="updateCourseData(text)">Update</button>
+            <button class="btn2" (click)="cancel()">Cancle</button>
+            </div>
+
+        </td>
+    </tr> 
+
+</tbody>
+
+
+</table>
+
+</table>
+
+</body>
+</html>
+
+

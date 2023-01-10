@@ -1,0 +1,39 @@
+<a href="/course"> <button class="btn btn-primary" type="submit">GET COURSES</button></a>
+<button type="addcoursedetails" class="btn btn-primary" (click)="toggleCourse()">ADD COURSE DETAILS</button> 
+<table *ngIf='Course' class="table-bg" matSort>
+<div class="test">
+    <div class="Course" *ngFor="let item of Course"></div>       
+    <h1 class="h1">UNIVERSITY COURSE DETAILS</h1>
+    <br>
+    <br>
+    <br>
+    <table class="table" >      
+        <tr>
+            <td><label class="label" for="">CourseId</label> </td>
+            <td><input class="input" type="text" placeholder="Enter coursename" [(ngModel)]="CourseName"></td>
+        </tr>
+        <tr>   
+        <td><label class="label" for="">CourseName</label></td>
+        <td><input style="margin-right:10%;" class="input" type="text" placeholder="Enter course id" [(ngModel)]="CourseId" ></td>
+        </tr>
+        <tr>
+        <td><label class="label" for="">InstituteName</label></td>
+        <td><input class="input" type="text" placeholder="Enter institute name"  [(ngModel)]="InstituteName" ></td>
+        </tr>
+        <tr>
+        <td><label class="label"for="">Address</label></td>
+        <td><input class="input" type="text" placeholder="Enter institute address"  [(ngModel)]="Address" ></td>
+        </tr>    
+        <tr>
+        <td><label class="label" for=""> CourseDuration</label></td>
+        <td><input class="input" type="text" placeholder="Enter the CourseDuration" [(ngModel)]="CourseDuration"> </td>
+        </tr>  
+        <tr>
+            <td><label>CourseURL</label></td>
+            <td><input class="input" type="text" placeholder="Enter Courseurl" [(ngModel)]="CourseURL"></td>
+       </tr>        
+    <br>
+    <button class="click" (click)="onSubmit()"  type="submit">Submit</button>   
+</table>
+</div>
+
